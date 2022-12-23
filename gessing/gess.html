@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background: url('images/e1.jpg');
+            block-size: 100% 100%;
+        }
+
+        #box {
+            min-height: 400px;
+            width: 300px;
+            background: rgb(44, 23, 23);
+            border: 10px double white;
+            margin: 100px auto;
+            border-radius: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            box-shadow: 0px 0px 20px 2px rgb(248, 78, 78), 0px 4px 15px 12px rgb(169, 224, 18);
+        }
+
+        p {
+            color: red;
+            font-size: 25px;
+            text-align: center;
+            background: white;
+            box-shadow: 0px 0px 20px 2px rgb(5, 122, 50), 0px 0px 35px 12px rgb(207, 10, 52);
+            border-radius: 5px;
+            padding: 1px;
+
+
+
+        }
+
+        .a {
+            height: 50px;
+            width: 50px;
+            background: rgb(132, 210, 241);
+            border: 8px double white;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px 4px white;
+            float: right;
+            margin: 30px;
+            text-align: center;
+            line-height: 50px;
+
+            font-size: 40px;
+
+        }
+
+
+        i {
+            font-size: 30px;
+color: white;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <p>Congratulations</p>
+
+        <i></i><br>
+        <div class="a" onclick="demo(this)">1</div>
+        <div class="a" onclick="demo(this)">2</div>
+        <div class="a" onclick="demo(this)">3</div>
+        <div class="a" onclick="demo(this)">4</div>
+    </div>
+
+
+    <script>
+
+        let demo = (x) => {
+            var w = document.querySelector("#w")
+            var l = document.querySelector("#l")
+            var msg = document.querySelector("p")
+            var i = document.querySelector("i")
+w.curretTime=0
+l.curretTime=0
+
+            var rno = Math.floor(Math.random() * 4) + 1
+            i.innerText = `Generated NO :${rno}`
+            //             alert(rno==x.innerText)
+
+            if (rno == x.innerText)
+
+            {
+               msg.innerText = "Congratulations !you winner"
+                msg.style.color = "green"
+                w.play()
+                l.pause()
+            }
+            else {
+
+                msg.innerText = "Ooops !you failed"
+                msg.style.color = "red"
+                w.pause()
+                l.play()
+            }
+       }
+    </script>
+<audio src="w.mp3" id="w"></audio>
+<audio src="l.mp3" id="l"></audio>
+
+</body>
+
+</html>
